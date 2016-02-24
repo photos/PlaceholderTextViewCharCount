@@ -61,7 +61,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     // Hide Status Bar
     override func prefersStatusBarHidden() -> Bool {
         return true
-    }
+    } 
     
     //---------------------------------------------
     // MARK: - TextView Should Change Text in Range
