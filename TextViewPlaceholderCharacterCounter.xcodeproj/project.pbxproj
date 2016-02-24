@@ -12,6 +12,10 @@
 		0BBB94151C76161100F6956E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BBB94131C76161100F6956E /* Main.storyboard */; };
 		0BBB94171C76161100F6956E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BBB94161C76161100F6956E /* Assets.xcassets */; };
 		0BBB941A1C76161100F6956E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BBB94181C76161100F6956E /* LaunchScreen.storyboard */; };
+		0BBB94221C76257500F6956E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB94211C76257500F6956E /* Constants.swift */; };
+		0BBB94241C7625DF00F6956E /* MaterialShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB94231C7625DF00F6956E /* MaterialShadowView.swift */; };
+		0BBB94261C7627F600F6956E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB94251C7627F600F6956E /* UIColorExtension.swift */; };
+		0BBB94281C763E1900F6956E /* MaterialTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB94271C763E1900F6956E /* MaterialTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		0BBB94161C76161100F6956E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BBB94191C76161100F6956E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BBB941B1C76161100F6956E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BBB94211C76257500F6956E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0BBB94231C7625DF00F6956E /* MaterialShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialShadowView.swift; sourceTree = "<group>"; };
+		0BBB94251C7627F600F6956E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0BBB94271C763E1900F6956E /* MaterialTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				0BBB940F1C76161100F6956E /* AppDelegate.swift */,
-				0BBB94111C76161100F6956E /* ViewController.swift */,
+				0BBB94291C763E2F00F6956E /* View */,
+				0BBB942A1C763E3700F6956E /* Controller */,
+				0BBB942B1C763E5300F6956E /* Util */,
 				0BBB94131C76161100F6956E /* Main.storyboard */,
 				0BBB94161C76161100F6956E /* Assets.xcassets */,
 				0BBB94181C76161100F6956E /* LaunchScreen.storyboard */,
 				0BBB941B1C76161100F6956E /* Info.plist */,
 			);
 			path = TextViewPlaceholderCharacterCounter;
+			sourceTree = "<group>";
+		};
+		0BBB94291C763E2F00F6956E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BBB94231C7625DF00F6956E /* MaterialShadowView.swift */,
+				0BBB94271C763E1900F6956E /* MaterialTextView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0BBB942A1C763E3700F6956E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0BBB94111C76161100F6956E /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0BBB942B1C763E5300F6956E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0BBB94211C76257500F6956E /* Constants.swift */,
+				0BBB94251C7627F600F6956E /* UIColorExtension.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +132,7 @@
 				TargetAttributes = {
 					0BBB940B1C76161100F6956E = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = ARWUKGJDKV;
 					};
 				};
 			};
@@ -135,8 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BBB94281C763E1900F6956E /* MaterialTextView.swift in Sources */,
 				0BBB94121C76161100F6956E /* ViewController.swift in Sources */,
 				0BBB94101C76161100F6956E /* AppDelegate.swift in Sources */,
+				0BBB94261C7627F600F6956E /* UIColorExtension.swift in Sources */,
+				0BBB94221C76257500F6956E /* Constants.swift in Sources */,
+				0BBB94241C7625DF00F6956E /* MaterialShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +288,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TextViewPlaceholderCharacterCounter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.helloTouch.TextViewPlaceholderCharacterCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -258,7 +301,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TextViewPlaceholderCharacterCounter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.helloTouch.TextViewPlaceholderCharacterCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";

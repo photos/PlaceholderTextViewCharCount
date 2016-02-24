@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextViewPlaceholderCharacterCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iae-fh-p2L" customClass="MaterialShadowView" customModule="TextViewPlaceholderCharacterCounter" customModuleProvider="target">
+                                <rect key="frame" x="20" y="40" width="560" height="276"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jyC-b8-SDr" customClass="MaterialTextView" customModule="TextViewPlaceholderCharacterCounter" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="520" height="212"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Ruw-pT-lzg"/>
+                                        </connections>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 characters left" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="666-xx-2ao">
+                                        <rect key="frame" x="20" y="247" width="520" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="p8L-Hy-Wpt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's on your mind?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-8N-moo">
+                                        <rect key="frame" x="25" y="21" width="511" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="3R7-KH-R6e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                        <color key="textColor" red="0.68888300657272339" green="0.71366006135940552" blue="0.73448425531387329" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.92156862745098034" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jyC-b8-SDr" secondAttribute="bottom" constant="44" id="1OZ-UQ-EfN"/>
+                                    <constraint firstAttribute="height" constant="276" id="3Ba-kp-b5F"/>
+                                    <constraint firstItem="CeN-8N-moo" firstAttribute="leading" secondItem="iae-fh-p2L" secondAttribute="leading" constant="24" id="7S5-3X-djW"/>
+                                    <constraint firstItem="jyC-b8-SDr" firstAttribute="top" secondItem="iae-fh-p2L" secondAttribute="top" constant="20" id="EdZ-kW-2S1"/>
+                                    <constraint firstItem="jyC-b8-SDr" firstAttribute="top" secondItem="iae-fh-p2L" secondAttribute="top" constant="20" id="Gjn-Y4-dC7"/>
+                                    <constraint firstItem="CeN-8N-moo" firstAttribute="top" secondItem="iae-fh-p2L" secondAttribute="top" constant="21" id="QVA-0t-foO"/>
+                                    <constraint firstItem="666-xx-2ao" firstAttribute="leading" secondItem="iae-fh-p2L" secondAttribute="leading" constant="20" id="UqA-hS-ldD"/>
+                                    <constraint firstAttribute="trailing" secondItem="666-xx-2ao" secondAttribute="trailing" constant="20" id="X58-64-dBG"/>
+                                    <constraint firstAttribute="trailing" secondItem="jyC-b8-SDr" secondAttribute="trailing" constant="20" id="aKx-hu-81B"/>
+                                    <constraint firstItem="CeN-8N-moo" firstAttribute="top" secondItem="iae-fh-p2L" secondAttribute="top" constant="29" id="b1o-4e-la3"/>
+                                    <constraint firstItem="CeN-8N-moo" firstAttribute="leading" secondItem="iae-fh-p2L" secondAttribute="leading" constant="25" id="ec7-L7-hFW"/>
+                                    <constraint firstItem="jyC-b8-SDr" firstAttribute="leading" secondItem="iae-fh-p2L" secondAttribute="leading" constant="20" id="fSb-g7-3kM"/>
+                                    <constraint firstItem="jyC-b8-SDr" firstAttribute="leading" secondItem="iae-fh-p2L" secondAttribute="leading" constant="20" id="g3g-YX-sjb"/>
+                                    <constraint firstAttribute="trailing" secondItem="CeN-8N-moo" secondAttribute="trailing" constant="24" id="kQs-9l-XiO"/>
+                                    <constraint firstAttribute="bottom" secondItem="666-xx-2ao" secondAttribute="bottom" constant="8" id="kZF-fe-p8O"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7S5-3X-djW"/>
+                                        <exclude reference="b1o-4e-la3"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iae-fh-p2L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="20A-0K-dWT"/>
+                            <constraint firstItem="iae-fh-p2L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="2Nh-Ls-x1d"/>
+                            <constraint firstItem="iae-fh-p2L" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GV5-ho-58X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="characterCountLabel" destination="666-xx-2ao" id="BTS-5o-4Kd"/>
+                        <outlet property="myTextView" destination="jyC-b8-SDr" id="gmT-ai-x64"/>
+                        <outlet property="myView" destination="iae-fh-p2L" id="Igx-YM-DdX"/>
+                        <outlet property="placeholderLabel" destination="CeN-8N-moo" id="WyP-aW-DB3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="440" y="389"/>
         </scene>
     </scenes>
 </document>
